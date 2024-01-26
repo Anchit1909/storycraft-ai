@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "description": "Live on a twitch stream and something goes wrong"
+  },
+  {
+    "id": "2",
+    "description": "Doing a live talk and the building gets struck by lightning"
+  },
+  {
+    "id": "3",
+    "description": "Pair programming but they get distracted by something scary"
+  },
+  {
+    "id": "4",
+    "description": "Virtual reality gaming session, and the power goes out"
+  },
+  {
+    "id": "5",
+    "description": "Coding during a hackathon, and the fire alarm goes off"
+  },
+  {
+    "id": "6",
+    "description": "Podcasting live, and a surprise guest joins unexpectedly"
+  },
+  {
+    "id": "7",
+    "description": "Art livestream, and the artist spills coffee on their masterpiece"
+  },
+  {
+    "id": "8",
+    "description": "Online yoga class, and the instructor's cat interrupts the session"
+  }
+]
