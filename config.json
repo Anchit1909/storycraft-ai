@@ -1,5 +1,5 @@
 {
   "stage": "stg",
   "email": "anchit1909@gmail.com",
-  "bedtimeCron": "cron(15 19 * * ? *)"
+  "bedtimeCron": "cron(45 20 * * ? *)"
 }
