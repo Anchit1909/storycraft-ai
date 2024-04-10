@@ -15,6 +15,7 @@ export default async function story({
   searchParams: { id: string | undefined };
 }) {
   const id = searchParams.id;
+  console.log("this is id", id);
   if (!id) {
     return {
       notFound: true,

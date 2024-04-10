@@ -4,7 +4,7 @@
   "description": "Generate children stories on cron jobs",
   "main": "index.js",
   "scripts": {
-    "start:frontend": "cd frontend && npm run dev",
+    "start:frontend": "cd frontend && npm run dev --turbo",
     "install:all": "cd backend && npm i && cd ../frontend && npm i && cd ../backend/src/create-story && npm i && cd ../../../backend/src/generate-audio-for-story && npm i && cd ../../../backend/src/generate-images-for-story && npm i && cd ../../../frontend && touch .env",
     "deploy": "cd backend && ./node_modules/.bin/cdk deploy --all",
     "populate-db": "node backend/scripts/insert-data-into-ddb.js"

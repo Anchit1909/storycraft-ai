@@ -59,7 +59,11 @@ export async function handler(
     new GetObjectCommand({
       Bucket: process.env.BUCKET_NAME,
       Key: `stories/${event.detail.id}/audio.mp3`,
-    })
+    }),
+    {
+      // two days
+      expiresIn: 172800,
+    }
   );
 
   // Write audio url to DDB
