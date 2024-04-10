@@ -1,11 +1,11 @@
-import {
+const {
   DynamoDBClient,
   BatchWriteItemCommand,
-} from "@aws-sdk/client-dynamodb";
-import { marshall } from "@aws-sdk/util-dynamodb";
-import { map } from "../data/characters.json";
-import { map as _map } from "../data/scenes.json";
-import { stage } from "../../config.json";
+} = require("@aws-sdk/client-dynamodb");
+const { marshall } = require("@aws-sdk/util-dynamodb");
+const characters = require("../data/characters.json");
+const scenes = require("../data/scenes.json");
+const config = require("../../config.json");
 
 const client = new DynamoDBClient({});
 
@@ -14,11 +14,13 @@ const insertIntoDDB = async () => {
   await client.send(
     new BatchWriteItemCommand({
       RequestItems: {
-        [`${stage}-aiStoriesTables-AiStory-Characters`]: map((character) => ({
-          PutRequest: {
-            Item: marshall(character),
-          },
-        })),
+        [`${config.stage}-aiStoriesTables-AiStory-Characters`]: characters.map(
+          (character) => ({
+            PutRequest: {
+              Item: marshall(character),
+            },
+          })
+        ),
       },
     })
   );
@@ -27,11 +29,13 @@ const insertIntoDDB = async () => {
   await client.send(
     new BatchWriteItemCommand({
       RequestItems: {
-        [`${stage}-aiStoriesTables-AiStory-Scenes`]: _map((scene) => ({
-          PutRequest: {
-            Item: marshall(scene),
-          },
-        })),
+        [`${config.stage}-aiStoriesTables-AiStory-Scenes`]: scenes.map(
+          (scene) => ({
+            PutRequest: {
+              Item: marshall(scene),
+            },
+          })
+        ),
       },
     })
   );
