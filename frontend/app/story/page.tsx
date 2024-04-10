@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { getStory } from "../../lib/aws";
-import Header from "@/components/Header";
 
 interface Story {
   description: string;
@@ -43,7 +42,6 @@ export default async function story({
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <div className="relative isolate overflow-hidden bg-gray-900">
-        <Header />
         <img
           src="https://images.unsplash.com/photo-1519791883288-dc8bd696e667?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=30&blend-mode=multiply"
           alt=""

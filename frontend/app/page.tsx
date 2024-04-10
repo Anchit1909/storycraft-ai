@@ -1,9 +1,6 @@
-import Header from "@/components/Header";
-
 export default function Home() {
   return (
     <main className="relative isolate overflow-hidden bg-gray-900 min-h-screen">
-      <Header />
       <img
         src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=30&blend-mode=multiply"
         alt=""
