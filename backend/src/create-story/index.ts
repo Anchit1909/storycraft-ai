@@ -8,11 +8,11 @@ import {
   PutItemCommand,
 } from "@aws-sdk/client-dynamodb";
 
-import { Configuration, OpenAIApi } from "openai";
+import { OpenAI } from "openai";
 import { marshall, unmarshall } from "@aws-sdk/util-dynamodb";
 import { v4 } from "uuid";
 
-const secretsClient = new SecretsManagerClient({});
+const secretsClient = new SecretsManagerClient({ region: "ap-south-1" });
 const dynamoClient = new DynamoDBClient({});
 
 export async function handler() {
@@ -26,11 +26,9 @@ export async function handler() {
 
   const apiKey = JSON.parse(secret.SecretString)["open-api-key"];
 
-  const openai = new OpenAIApi(
-    new Configuration({
-      apiKey,
-    })
-  );
+  const openai = new OpenAI({
+    apiKey: apiKey,
+  });
 
   // Get all characters in the DB, just scan as it's a small DB, if this grows might want to change access pattern
   const { Items: rawCharacters = [] } = await dynamoClient.send(
@@ -65,9 +63,9 @@ export async function handler() {
   } and be at least 200 words long
 `;
 
-  const result = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt: prompt,
+  const result = await openai.chat.completions.create({
+    messages: [{ role: "system", content: prompt }],
+    model: "gpt-3.5-turbo",
     max_tokens: 1000,
     temperature: 0.7,
   });
@@ -77,7 +75,7 @@ export async function handler() {
   );
   const storyTTL = Math.floor(twoDaysFromNow.getTime() / 1000);
 
-  const story = result.data.choices[0].text || "";
+  const story = result.choices[0].message.content || "";
   const storyParts = story.trim().split("\n");
 
   // Get title from the story
