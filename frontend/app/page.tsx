@@ -1,6 +1,9 @@
+import Header from "@/components/Header";
+
 export default function Home() {
   return (
     <main className="relative isolate overflow-hidden bg-gray-900 min-h-screen">
+      <Header />
       <img
         src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=30&blend-mode=multiply"
         alt=""
@@ -25,8 +28,8 @@ export default function Home() {
               y2="474.645"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#9089FC" />
-              <stop offset={1} stopColor="#FF80B5" />
+              <stop stopColor="#f59e0b" />
+              <stop offset={1} stopColor="#ec4899" />
             </linearGradient>
           </defs>
         </svg>
@@ -35,9 +38,13 @@ export default function Home() {
         <div className="relative px-6 lg:px-8">
           <div className="mx-auto max-w-4xl flex items-center align-middle h-screen -mt-20">
             <div className="text-center pt-20 items-center">
+              <p className="mb-4 font-bold text-gray-300">
+                For children aged 2-8
+              </p>
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block xl:inline text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-pink-500">
+                <span className="block xl:inline text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-pink-500">
                   Experience the Magic of AI-Generated Stories for Your Kids
+                  with Storycraft AI
                 </span>
               </h1>
               <h2 className="text-xl font-bold tracking-tight text-gray-300 sm:text-xl py-6 max-w-xl mx-auto">
@@ -46,7 +53,7 @@ export default function Home() {
               </h2>
               <button
                 type="button"
-                className="mt-10 rounded-md bg-indigo-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="mt-6 rounded-md bg-amber-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-amber-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
               >
                 Get started &rarr;
               </button>
@@ -71,8 +78,8 @@ export default function Home() {
                   y2="474.645"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stopColor="#9089FC" />
-                  <stop offset={1} stopColor="#FF80B5" />
+                  <stop stopColor="#f59e0b" />
+                  <stop offset={1} stopColor="#ec4899" />
                 </linearGradient>
               </defs>
             </svg>
