@@ -37,7 +37,7 @@ StorycraftAI is an an automated Event Driven AI bedtime story generation applica
 
 ## How it works
 
-![Architecture diagram](./frontend/public/Arch-Dark.png.png)
+![Architecture diagram](./frontend/public/Arch-Dark.png)
 
 1. Every day at a configured time an **EventBridge Schedule** is trigger which triggers a Lambda function.
 
