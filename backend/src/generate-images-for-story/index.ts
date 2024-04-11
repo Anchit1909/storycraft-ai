@@ -74,11 +74,11 @@ export async function handler(
     new GetObjectCommand({
       Bucket: process.env.BUCKET_NAME,
       Key: `stories/${event.detail.id}/image.png`,
-    }),
-    {
-      // two days
-      expiresIn: 172800,
-    }
+    })
+    // {
+    //   // two days
+    //   expiresIn: 172800,
+    // }
   );
 
   // Add thumbnail to the story

@@ -91,7 +91,7 @@ export async function handler() {
         title,
         characters,
         description,
-        ttl: storyTTL,
+        // ttl: storyTTL,
         scene: selectedScene.description,
         createdAt: new Date().toISOString(),
       }),
